@@ -169,16 +169,36 @@ public class Bot extends TelegramLongPollingBot {
                     }
                 }
                 case "Muzlatgich LG GC B399SMCL" -> {
-
+                    try {
+                        execute(LGfridges.LGGCB399SMCL(chatId));
+                        execute(LGfridges.LGGCB399SMCL_info(chatId));
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
                 case "Muzlatgich LG GC B459SLCL" -> {
-
+                    try {
+                        execute(LGfridges.LGGCB459SLCL(chatId));
+                        execute(LGfridges.LGGCB459SLCL_info(chatId));
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
                 case "Muzlatgich LG GN-B392SMBB.APZQCIS" -> {
-
+                    try {
+                        execute(LGfridges.LGGNB392SMBB(chatId));
+                        execute(LGfridges.LGGNB392SMBB_info(chatId));
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
                 case "Muzlatgich LG GC X257CAEC" -> {
-
+                    try {
+                        execute(LGfridges.LGGCX257CAEC(chatId));
+                        execute(LGfridges.LGGCX257CAEC_info(chatId));
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
         }
@@ -242,39 +262,43 @@ public class Bot extends TelegramLongPollingBot {
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
-                }/* case "LGgnB272SLCB_ID" -> {
-                    product.add("LGgnB272SLCB");
-                    cost += 6500000;
+                }
+                case "LGGCB399SMCL_ID" -> {
+                    product.add("LGGCB399SMCL");
+                    cost += 8000000;
                     try {
                         execute(messageOrder(chatid));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
-                } case "LGgnB272SLCB_ID" -> {
-                    product.add("LGgnB272SLCB");
-                    cost += 6500000;
+                }
+                case "LGGCB459SLCL_ID" -> {
+                    product.add("LGGCB459SLCL");
+                    cost += 9000000;
                     try {
                         execute(messageOrder(chatid));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
-                } case "LGgnB272SLCB_ID" -> {
-                    product.add("LGgnB272SLCB");
-                    cost += 6500000;
+                }
+                case "LGGNB392SMBB_ID" -> {
+                    product.add("LGGNB392SMBB");
+                    cost += 10000000;
                     try {
                         execute(messageOrder(chatid));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
-                } case "LGgnB272SLCB_ID" -> {
-                    product.add("LGgnB272SLCB");
-                    cost += 6500000;
+                }
+                case "LGGCX257CAEC_ID" -> {
+                    product.add("LGGCX257CAEC");
+                    cost += 20000000;
                     try {
                         execute(messageOrder(chatid));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
-                }*/
+                }
             }
         }
 
