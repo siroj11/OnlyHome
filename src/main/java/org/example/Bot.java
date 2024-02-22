@@ -359,6 +359,7 @@ public class Bot extends TelegramLongPollingBot {
             row1.createCell(2, Cell.CELL_TYPE_STRING).setCellValue(use.getUserName());
             row1.createCell(3, Cell.CELL_TYPE_STRING).setCellValue(use.getMessage());
             row1.createCell(4, Cell.CELL_TYPE_STRING).setCellValue(use.getChatID());
+            row1.createCell(5, Cell.CELL_TYPE_STRING).setCellValue(use.getChatID());
         }
         try {
             sheets.write(new FileOutputStream(new File("C:\\Users\\user\\Desktop\\study\\check.xlsx")));
