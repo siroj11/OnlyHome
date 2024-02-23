@@ -8,15 +8,10 @@ import org.apache.poi.xssf.usermodel.*;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.ActionType;
 import org.telegram.telegrambots.meta.api.methods.send.SendChatAction;
-import org.telegram.telegrambots.meta.api.methods.send.SendMediaGroup;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.api.objects.media.InputMedia;
-import org.telegram.telegrambots.meta.api.objects.media.InputMediaPhoto;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -67,32 +62,37 @@ public class Bot extends TelegramLongPollingBot {
                     }
                 }
                 case "⬅️Back" -> {
-                    if (state.equals("order")){
-                        try {
-                            execute(service.menu(chatId));
-                        } catch (TelegramApiException e) {
-                            throw new RuntimeException(e);
+                    switch (state) {
+                        case "order" -> {
+                            try {
+                                execute(service.menu(chatId));
+                            } catch (TelegramApiException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
-                    }else if (state.equals("catalogFirstPage")){
-                        try {
-                            execute(service.order(chatId));
-                            state="order";
-                        } catch (TelegramApiException e) {
-                            throw new RuntimeException(e);
+                        case "catalogFirstPage" -> {
+                            try {
+                                execute(service.order(chatId));
+                                state = "order";
+                            } catch (TelegramApiException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
-                    }else if (state.equals("maishiyTexnika")){
-                        try {
-                            state="catalogFirstPage";
-                            execute(service.maishiyTexnika(chatId));
-                        } catch (TelegramApiException e) {
-                            throw new RuntimeException(e);
+                        case "maishiyTexnika" -> {
+                            try {
+                                state = "catalogFirstPage";
+                                execute(service.maishiyTexnika(chatId));
+                            } catch (TelegramApiException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
-                    }else if (state.equals("fridge")){
-                        try {
-                            state="maishiyTexnika";
-                            execute(service.fridge(chatId));
-                        } catch (TelegramApiException e) {
-                            throw new RuntimeException(e);
+                        case "fridge" -> {
+                            try {
+                                state = "maishiyTexnika";
+                                execute(service.fridge(chatId));
+                            } catch (TelegramApiException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
                     }
                 }
@@ -115,7 +115,7 @@ public class Bot extends TelegramLongPollingBot {
 
                 }
                 case "✍️ Izoh qoldirish" -> {
-                    break;
+
                 }
                 case "ℹ️ Biz haqimizda" -> {
                     try {
@@ -379,7 +379,7 @@ public class Bot extends TelegramLongPollingBot {
             message.setText("OnlyHome botiga xush kelibsiz");
             message.setChatId(chatid);
             execute(message);
-            if (true) execute(service.choiceLanguage(Long.parseLong(chatid)));
+            execute(service.choiceLanguage(Long.parseLong(chatid)));
         } else {
             execute(service.menu(Long.parseLong(chatid)));
         }
@@ -423,7 +423,7 @@ public class Bot extends TelegramLongPollingBot {
             row1.createCell(5, Cell.CELL_TYPE_STRING).setCellValue(use.getChatID());
         }
         try {
-            sheets.write(new FileOutputStream(new File("C:\\Users\\user\\Desktop\\study\\check.xlsx")));
+            sheets.write(new FileOutputStream("C:\\Users\\user\\Desktop\\study\\check.xlsx"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
