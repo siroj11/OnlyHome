@@ -26,8 +26,49 @@ public class LGfridges {
         KeyboardButton back = new KeyboardButton();
         back.setText("⬅️Back");
         row.add(basket);
-
-
+        row.add(back);
+        KeyboardRow row1 = new KeyboardRow();
+        KeyboardRow row2 = new KeyboardRow();
+        KeyboardRow row3 = new KeyboardRow();
+        KeyboardButton button1 = new KeyboardButton();
+        button1.setText("Muzlatgich LG 187l");
+        KeyboardButton button2 = new KeyboardButton();
+        button2.setText("Muzlkatgich LG 254l");
+        KeyboardButton button3 = new KeyboardButton();
+        button3.setText("Muzlatgich LG 306l");
+        KeyboardButton button4 = new KeyboardButton();
+        button4.setText("Muzlatgich LG 341l");
+        KeyboardButton button5 = new KeyboardButton();
+        button5.setText("Muzlatgich LG 395l");
+        KeyboardButton button6 = new KeyboardButton();
+        button6.setText("Muzlatgich LG 617l");
+        row1.add(button1);
+        row1.add(button2);
+        row2.add(button3);
+        row2.add(button4);
+        row3.add(button5);
+        row3.add(button6);
+        rowList.add(row1);
+        rowList.add(row2);
+        rowList.add(row3);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        markup.setResizeKeyboard(true);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+    public SendMessage SamsungFridge(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
+        message.setText("Katalogni tanlang");
+        ReplyKeyboardMarkup markup = new ReplyKeyboardMarkup();
+        List<KeyboardRow> rowList = new ArrayList<>();
+        KeyboardRow row = new KeyboardRow();
+        KeyboardButton basket = new KeyboardButton();
+        basket.setText("\uD83D\uDCCBSavat");
+        KeyboardButton back = new KeyboardButton();
+        back.setText("⬅️Back");
+        row.add(basket);
         row.add(back);
         KeyboardRow row1 = new KeyboardRow();
         KeyboardRow row2 = new KeyboardRow();
@@ -59,8 +100,7 @@ public class LGfridges {
         message.setReplyMarkup(markup);
         return message;
     }
-
-    public SendMediaGroup LGgnB272SLCB(Long chatId) {
+    public SendMediaGroup LG187l(Long chatId) {
         InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/873/87377/192846/4e396093-5deb-42f3-9f9e-592ba97cd4d5.jpg");
         InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/873/87377/166840/f4b3759b-979b-4b4e-b986-c8d116246285.jpg");
         List<InputMedia> list = new ArrayList<>();
@@ -72,7 +112,7 @@ public class LGfridges {
         return sendMediaGroup;
     }
 
-    public SendMessage LGgnB272SLCB_INFO(Long chatId) {
+    public SendMessage LG187l_info(Long chatId) {
         SendMessage message = new SendMessage();
         message.setText("\n" +
                 "Mahsulot haqida qisqacha malumot\n" +
@@ -88,7 +128,7 @@ public class LGfridges {
         List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText("Savatga qoshish");
-        button.setCallbackData("LGgnB272SLCB_ID");
+        button.setCallbackData("LG187l_ID");
         row.add(button);
         rowList.add(row);
         markup.setKeyboard(rowList);
@@ -96,7 +136,7 @@ public class LGfridges {
         return message;
     }
 
-    public SendMediaGroup LGGNF272SBCB(Long chatId) {
+    public SendMediaGroup LG254l(Long chatId) {
         InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3558/355854/190191/2f6c18e1-f384-415d-96ba-3a06377ef087-small.webp");
         InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3558/355854/190188/204cc1c2-0452-4973-a7f8-90677c47aaf6.webp");
         InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3558/355854/190194/527e6c77-396b-42db-8f8a-bc00415c2a11-small.webp");
@@ -113,7 +153,7 @@ public class LGfridges {
         return sendMediaGroup;
     }
 
-    public SendMessage LGGNF272SBCB_info(Long chatId) {
+    public SendMessage LG254l_info(Long chatId) {
         SendMessage message = new SendMessage();
         message.setText("\n" +
                 "Mahsulot haqida qisqacha malumot\n" +
@@ -129,7 +169,7 @@ public class LGfridges {
         List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText("Savatga qoshish");
-        button.setCallbackData("LGGNF272SBCB_ID");
+        button.setCallbackData("LG254l_ID");
         row.add(button);
         rowList.add(row);
         markup.setKeyboard(rowList);
@@ -137,7 +177,7 @@ public class LGfridges {
         return message;
     }
 
-    public SendMediaGroup LGGCB399SMCL(Long chatId) {
+    public SendMediaGroup LG306l(Long chatId) {
         InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3559/355971/190485/bdca8dbf-bf84-4f1d-a0f3-36bdead824c7.webp");
         InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3559/355971/190487/c89853da-2ce4-46b3-877c-3ee2873d253d.webp");
         InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3559/355971/190486/cbddb8b0-603f-433f-8b8f-ebfbca5e614a.webp");
@@ -151,7 +191,7 @@ public class LGfridges {
         return sendMediaGroup;
     }
 
-    public SendMessage LGGCB399SMCL_info(Long chatId) {
+    public SendMessage LG306l_info(Long chatId) {
         SendMessage message = new SendMessage();
         message.setText("\n" +
                 "Mahsulot haqida qisqacha malumot\n" +
@@ -167,7 +207,7 @@ public class LGfridges {
         List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText("Savatga qoshish");
-        button.setCallbackData("LGGCB399SMCL_ID");
+        button.setCallbackData("LG306l_ID");
         row.add(button);
         rowList.add(row);
         markup.setKeyboard(rowList);
@@ -175,7 +215,7 @@ public class LGfridges {
         return message;
     }
 
-    public SendMediaGroup LGGCB459SLCL(Long chatId) {
+    public SendMediaGroup LG341l(Long chatId) {
         InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/808/80863/155959/6b4c2721-d223-402e-affc-85dac5a500e3.jpg");
         InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/808/80863/155960/579c843e-0d55-4b68-a657-501ff51ed825-small.jpg");
         InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/808/80863/155961/2d6ffb27-3010-42e1-b278-dcedb3f1f49c-small.jpg");
@@ -189,7 +229,7 @@ public class LGfridges {
         return sendMediaGroup;
     }
 
-    public SendMessage LGGCB459SLCL_info(Long chatId) {
+    public SendMessage LG341l_info(Long chatId) {
         SendMessage message = new SendMessage();
         message.setText("\n" +
                 "Mahsulot haqida qisqacha malumot\n" +
@@ -205,7 +245,7 @@ public class LGfridges {
         List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText("Savatga qoshish");
-        button.setCallbackData("LGGCB459SLCL_ID");
+        button.setCallbackData("LG341l_ID");
         row.add(button);
         rowList.add(row);
         markup.setKeyboard(rowList);
@@ -213,7 +253,7 @@ public class LGfridges {
         return message;
     }
 
-    public SendMediaGroup LGGNB392SMBB(Long chatId) {
+    public SendMediaGroup LG395l(Long chatId) {
         InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3557/355749/192806/27412b44-a185-434c-a77e-af9749f9e4ca.jpg");
         InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3557/355749/189230/e471d749-8d55-4419-98d6-9d5c1c064a90-small.webp");
         InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3557/355749/189224/76489c3c-1870-4612-bbe6-43f7daf9dd2a-small.webp");
@@ -229,7 +269,7 @@ public class LGfridges {
         return sendMediaGroup;
     }
 
-    public SendMessage LGGNB392SMBB_info(Long chatId) {
+    public SendMessage LG395l_info(Long chatId) {
         SendMessage message = new SendMessage();
         message.setText("\n" +
                 "Mahsulot haqida qisqacha malumot\n" +
@@ -245,7 +285,7 @@ public class LGfridges {
         List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText("Savatga qoshish");
-        button.setCallbackData("LGGNB392SMBB_ID");
+        button.setCallbackData("LG35l_ID");
         row.add(button);
         rowList.add(row);
         markup.setKeyboard(rowList);
@@ -253,7 +293,7 @@ public class LGfridges {
         return message;
     }
 
-    public SendMediaGroup LGGCX257CAEC(Long chatId) {
+    public SendMediaGroup LG617l(Long chatId) {
         InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3553/355305/192835/b78d0786-5326-4980-af3d-7be71bd9c0f4.jpg");
         InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3553/355305/187555/0c69f2d6-2304-43c5-8a32-3d221bafe393.jpg");
         InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3553/355305/187562/32063134-5dab-444f-96b2-3e59783258ff.jpg");
@@ -267,7 +307,7 @@ public class LGfridges {
         return sendMediaGroup;
     }
 
-    public SendMessage LGGCX257CAEC_info(Long chatId) {
+    public SendMessage LG617l_info(Long chatId) {
         SendMessage message = new SendMessage();
         message.setText("\n" +
                 "Mahsulot haqida qisqacha malumot\n" +
@@ -283,7 +323,7 @@ public class LGfridges {
         List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText("Savatga qoshish");
-        button.setCallbackData("LGGCX257CAEC_ID");
+        button.setCallbackData("LG617l_ID");
         row.add(button);
         rowList.add(row);
         markup.setKeyboard(rowList);

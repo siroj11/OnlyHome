@@ -115,7 +115,11 @@ public class Bot extends TelegramLongPollingBot {
 
                 }
                 case "✍️ Izoh qoldirish" -> {
-
+                    try {
+                        state="order";
+                        execute(service.izohQoldirishUz(chatId));
+                    } catch (TelegramApiException e) {
+                    }
                 }
                 case "ℹ️ Biz haqimizda" -> {
                     try {
@@ -195,68 +199,68 @@ public class Bot extends TelegramLongPollingBot {
                         throw new RuntimeException(e);
                     }
                 }
-                case "Muzlatgich LG GN B272SLCB" -> {
+                case "Muzlatgich LG 187l" -> {
                     action.setAction(ActionType.UPLOADPHOTO);
                     action.setChatId(chatId);
                     try {
                         execute(action);
-                        execute(LGfridges.LGgnB272SLCB(chatId));
-                        execute(LGfridges.LGgnB272SLCB_INFO(chatId));
+                        execute(LGfridges.LG187l(chatId));
+                        execute(LGfridges.LG187l_info(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
                 }
-                case "Muzlkatgich LG GN-F272SBCB.ABLQTAS" -> {
+                case "Muzlkatgich LG 254l" -> {
                     action.setAction(ActionType.UPLOADPHOTO);
                     action.setChatId(chatId);
                     try {
                         execute(action);
-                        execute(LGfridges.LGGNF272SBCB(chatId));
-                        execute(LGfridges.LGGNF272SBCB_info(chatId));
+                        execute(LGfridges.LG254l(chatId));
+                        execute(LGfridges.LG254l_info(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
                 }
-                case "Muzlatgich LG GC B399SMCL" -> {
+                case "Muzlatgich LG 306l" -> {
                     action.setAction(ActionType.UPLOADPHOTO);
                     action.setChatId(chatId);
                     try {
                         execute(action);
-                        execute(LGfridges.LGGCB399SMCL(chatId));
-                        execute(LGfridges.LGGCB399SMCL_info(chatId));
+                        execute(LGfridges.LG306l(chatId));
+                        execute(LGfridges.LG306l_info(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
                 }
-                case "Muzlatgich LG GC B459SLCL" -> {
+                case "Muzlatgich LG 341l" -> {
                     action.setAction(ActionType.UPLOADPHOTO);
                     action.setChatId(chatId);
                     try {
                         execute(action);
-                        execute(LGfridges.LGGCB459SLCL(chatId));
-                        execute(LGfridges.LGGCB459SLCL_info(chatId));
+                        execute(LGfridges.LG341l(chatId));
+                        execute(LGfridges.LG341l_info(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
                 }
-                case "Muzlatgich LG GN-B392SMBB.APZQCIS" -> {
+                case "Muzlatgich LG 395l" -> {
                     action.setAction(ActionType.UPLOADPHOTO);
                     action.setChatId(chatId);
                     try {
                         execute(action);
-                        execute(LGfridges.LGGNB392SMBB(chatId));
-                        execute(LGfridges.LGGNB392SMBB_info(chatId));
+                        execute(LGfridges.LG395l(chatId));
+                        execute(LGfridges.LG395l_info(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
                 }
-                case "Muzlatgich LG GC X257CAEC" -> {
+                case "Muzlatgich LG 617l" -> {
                     action.setAction(ActionType.UPLOADPHOTO);
                     action.setChatId(chatId);
                     try {
                         execute(action);
-                        execute(LGfridges.LGGCX257CAEC(chatId));
-                        execute(LGfridges.LGGCX257CAEC_info(chatId));
+                        execute(LGfridges.LG617l(chatId));
+                        execute(LGfridges.LG617l_info(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
@@ -301,13 +305,18 @@ public class Bot extends TelegramLongPollingBot {
                 }*/
                 case "uzb" -> {
                     try {
-                        execute(service.contactRequest(chatid));
+                        if (firstStart){
+                            execute(service.contactRequest(chatid));
+                            firstStart=false;
+                        }else if (firstStart){
+                            execute(service.menu(chatid));
+                        }
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
                 }
-                case "LGgnB272SLCB_ID" -> {
-                    product.add("LGgnB272SLCB");
+                case "LG187l_ID" -> {
+                    product.add("Muzlatgich LG187l");
                     cost += 6500000;
                     try {
                         execute(messageOrder(chatid));
@@ -315,8 +324,8 @@ public class Bot extends TelegramLongPollingBot {
                         throw new RuntimeException(e);
                     }
                 }
-                case "LGGNF272SBCB_ID" -> {
-                    product.add("LGGNF272SBCB");
+                case "LG254l_ID" -> {
+                    product.add("Muzlatgich LG254l");
                     cost += 7400000;
                     try {
                         execute(messageOrder(chatid));
@@ -324,8 +333,8 @@ public class Bot extends TelegramLongPollingBot {
                         throw new RuntimeException(e);
                     }
                 }
-                case "LGGCB399SMCL_ID" -> {
-                    product.add("LGGCB399SMCL");
+                case "LG306l_ID" -> {
+                    product.add("Muzlatgich LG306l");
                     cost += 8000000;
                     try {
                         execute(messageOrder(chatid));
@@ -333,8 +342,8 @@ public class Bot extends TelegramLongPollingBot {
                         throw new RuntimeException(e);
                     }
                 }
-                case "LGGCB459SLCL_ID" -> {
-                    product.add("LGGCB459SLCL");
+                case "LG341l_ID" -> {
+                    product.add("Muzlatgich LG341l");
                     cost += 9000000;
                     try {
                         execute(messageOrder(chatid));
@@ -342,8 +351,8 @@ public class Bot extends TelegramLongPollingBot {
                         throw new RuntimeException(e);
                     }
                 }
-                case "LGGNB392SMBB_ID" -> {
-                    product.add("LGGNB392SMBB");
+                case "LG35l_ID" -> {
+                    product.add("Muzlatgich LG35l");
                     cost += 10000000;
                     try {
                         execute(messageOrder(chatid));
@@ -351,11 +360,17 @@ public class Bot extends TelegramLongPollingBot {
                         throw new RuntimeException(e);
                     }
                 }
-                case "LGGCX257CAEC_ID" -> {
-                    product.add("LGGCX257CAEC");
+                case "LG617l_ID" -> {
+                    product.add("Muzlatgich LG617l");
                     cost += 20000000;
                     try {
                         execute(messageOrder(chatid));
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
+                }case "editLanguageID"->{
+                    try {
+                        execute(service.choiceLanguage(chatid));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
@@ -389,14 +404,12 @@ public class Bot extends TelegramLongPollingBot {
     private void dataCheck() {
         XSSFWorkbook sheets = new XSSFWorkbook();
         XSSFSheet sheet = sheets.createSheet("User");
-
         XSSFCellStyle cellStyle = sheets.createCellStyle();
         cellStyle.setAlignment(HorizontalAlignment.CENTER);
         XSSFRow row = sheet.createRow(0);
         XSSFCell cell = row.createCell(0, Cell.CELL_TYPE_STRING);
         cell.setCellValue("FirstName");
         cell.setCellStyle(cellStyle);
-
         XSSFCell cell1 = row.createCell(0, Cell.CELL_TYPE_STRING);
         cell1.setCellValue("LastName");
         cell1.setCellStyle(cellStyle);

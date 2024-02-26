@@ -406,14 +406,30 @@ public class Service {
     public SendMessage basket(Long chatId, long cost, List<String> product) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
-        for (int i = 0; i < product.size(); i++) {
-            message.setText("Sizning tovarlaringiz: \n" + product.get(i) + " \nNarxi: " + cost);
+        String text = "";
+        for (String s : product) {
+            text = "Sizning tovarlaringiz: \n" + s + "\nNarxi: " + cost;
         }
-
+        message.setText(text);
 
         return message;
     }
-
+    public SendMessage izohQoldirishUz(Long chatId) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setText("Izoh qoldiring. Sizning fikringiz biz uchun muhim");
+        sendMessage.setChatId(chatId);
+        ReplyKeyboardMarkup reply = new ReplyKeyboardMarkup();
+        List<KeyboardRow> rows = new ArrayList<>();
+        KeyboardRow row1 = new KeyboardRow();
+        KeyboardButton button1 = new KeyboardButton();
+        button1.setText("⬅️Orqaga");
+        row1.add(button1);
+        rows.add(row1);
+        reply.setKeyboard(rows);
+        reply.setResizeKeyboard(true);
+        sendMessage.setReplyMarkup(reply);
+        return sendMessage;
+    }
 
     public SendMessage order(Long chatId) {
         SendMessage message = new SendMessage();
