@@ -13,7 +13,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.Keyboard
 import java.util.ArrayList;
 import java.util.List;
 
-public class LGfridges {
+public class Fridges {
     public SendMessage LGfridge(Long chatId) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
@@ -57,6 +57,7 @@ public class LGfridges {
         message.setReplyMarkup(markup);
         return message;
     }
+
     public SendMessage SamsungFridge(Long chatId) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
@@ -74,17 +75,17 @@ public class LGfridges {
         KeyboardRow row2 = new KeyboardRow();
         KeyboardRow row3 = new KeyboardRow();
         KeyboardButton button1 = new KeyboardButton();
-        button1.setText("Muzlatgich LG GN B272SLCB");
+        button1.setText("Muzlatgich Samsung 290l");
         KeyboardButton button2 = new KeyboardButton();
-        button2.setText("Muzlkatgich LG GN-F272SBCB.ABLQTAS");
+        button2.setText("Muzlatgich Samsung 310l");
         KeyboardButton button3 = new KeyboardButton();
-        button3.setText("Muzlatgich LG GC B399SMCL");
+        button3.setText("Muzlatgich Samsung 367l");
         KeyboardButton button4 = new KeyboardButton();
-        button4.setText("Muzlatgich LG GC B459SLCL");
+        button4.setText("Muzlatgich Samsung 388l");
         KeyboardButton button5 = new KeyboardButton();
-        button5.setText("Muzlatgich LG GN-B392SMBB.APZQCIS");
+        button5.setText("Muzlatgich Samsung 460l");
         KeyboardButton button6 = new KeyboardButton();
-        button6.setText("Muzlatgich LG GC X257CAEC");
+        button6.setText("Muzlatgich Samsung 640l");
         row1.add(button1);
         row1.add(button2);
         row2.add(button3);
@@ -100,6 +101,7 @@ public class LGfridges {
         message.setReplyMarkup(markup);
         return message;
     }
+
     public SendMediaGroup LG187l(Long chatId) {
         InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/873/87377/192846/4e396093-5deb-42f3-9f9e-592ba97cd4d5.jpg");
         InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/873/87377/166840/f4b3759b-979b-4b4e-b986-c8d116246285.jpg");
@@ -331,4 +333,230 @@ public class LGfridges {
         return message;
     }
 
+    //SAMSUNG
+    public SendMediaGroup SM290l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/947/94702/172127/d443bc2d-556c-45d6-b43c-4257c17bd9a7-small.jpg");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/947/94702/172128/1bed8b89-54ad-4474-8e54-e2c5992abf61.jpg");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/947/94702/172131/14f50975-28b9-43a6-ad7f-9b5cab3f27aa.jpg");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage SM290l_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: SAMSUNG\n" +
+                "Muzlatish kamerasini eritish: No Frost\n" +
+                "Umumiy hajmi: 290 l\n" +
+                "Sovutgich kamerasi hajmi: 192 l\n" +
+                "Muzlatish kamerasi hajmi: 98 l\n" +
+                "Narxi: 5 150 000 so'm");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("SM290l_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMediaGroup SM310l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/807/80782/155748/b3eb707b-b32a-46b1-89e9-8634ecad85ba.jpg");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/807/80782/155749/8364f073-d55b-406d-bd94-8dbd427a2aea.jpg");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/807/80782/155751/529d3873-63ea-4560-a00c-2c848845d57c.jpg");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage SM310l_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: SAMSUNG\n" +
+                "Muzlatish kamerasini eritish: No Frost\n" +
+                "Umumiy hajmi: 310 l\n" +
+                "Sovutgich kamerasi hajmi: 212 l\n" +
+                "Muzlatish kamerasi hajmi: 98 l\n" +
+                "Narxi: 9 785 000 so'm");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("SM310l_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMediaGroup SM367l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/1024/102431/180021/075ec31a-b52e-449d-815e-ae5fdf56b88d.jpg");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/1024/102431/180025/2d1f06a4-a367-4650-9402-4013e3c167ce.jpg");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/1024/102431/180024/ddb76439-178e-4718-a996-7cd7ad68ab2e.jpg");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage SM367l_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: SAMSUNG\n" +
+                "Muzlatish kamerasini eritish: No Frost\n" +
+                "Umumiy hajmi: 367 l\n" +
+                "Sovutgich kamerasi hajmi: 269 l\n" +
+                "Muzlatish kamerasi hajmi: 98 l\n" +
+                "Narxi: 10 197 000 so'm");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("SM367l_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMediaGroup SM388l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3560/356072/192831/4d8fbfba-4a5f-4725-a971-f65257c34e0d.jpg");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3560/356072/191267/f6c7575a-e78d-448e-9af0-ee90eaac4d35.webp");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3560/356072/191266/215b7914-ac65-432d-9ac5-731ba13593e2.webp");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage SM388l_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: SAMSUNG\n" +
+                "Muzlatish kamerasini eritish: No Frost\n" +
+                "Umumiy hajmi: 388 l\n" +
+                "Sovutgich kamerasi hajmi: 291 l\n" +
+                "Muzlatish kamerasi hajmi: 97 l\n" +
+                "Narxi: 11 845 000 so'm");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("SM388l_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMediaGroup SM460l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3562/356269/192365/310bca39-01b8-48c9-978c-028fc2ad4752.webp");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3562/356269/192366/f22d346c-6062-4c4a-ada3-def6c50c3cd6.webp");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage SM460l_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: SAMSUNG\n" +
+                "Muzlatish kamerasini eritish: No Frost\n" +
+                "Umumiy hajmi: 460 l\n" +
+                "Sovutgich kamerasi hajmi: 353 l\n" +
+                "Muzlatish kamerasi hajmi: 107 l\n" +
+                "Narxi: 13 390 000 so'm");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("SM460l_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMediaGroup SM640l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3549/354902/186637/e5ca840d-247d-4819-9f02-ffd4c266722e.jpg");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3549/354902/186641/d24920b7-e00e-40f7-924f-6e5d8a88c657.jpg");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3549/354902/186642/aaf9a724-5802-418b-ac4c-8073cdfe03df.jpg");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage SM640l_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: SAMSUNG\n" +
+                "Muzlatish kamerasini eritish: No Frost\n" +
+                "Umumiy hajmi: 640 l\n" +
+                "Sovutgich kamerasi hajmi: 411 l\n" +
+                "Muzlatish kamerasi hajmi: 299 l\n" +
+                "Narxi: 22 660 000 so'm");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("SM640l_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
 }

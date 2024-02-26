@@ -1,6 +1,7 @@
 package org.example;
 
-import homeAppliances.LGfridges;
+import homeAppliances.Fridges;
+
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
@@ -21,7 +22,7 @@ import java.util.List;
 public class Bot extends TelegramLongPollingBot {
     Service service = new Service();
     static List<Users> userList = new ArrayList<>();
-    homeAppliances.LGfridges LGfridges = new LGfridges();
+    homeAppliances.Fridges fridges = new Fridges();
     SendChatAction action = new SendChatAction();
     private String state = "";
 
@@ -194,7 +195,7 @@ public class Bot extends TelegramLongPollingBot {
                 case "LG muzlatgichlar" -> {
                     try {
                         state="fridge";
-                        execute(LGfridges.LGfridge(chatId));
+                        execute(fridges.LGfridge(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
@@ -204,8 +205,8 @@ public class Bot extends TelegramLongPollingBot {
                     action.setChatId(chatId);
                     try {
                         execute(action);
-                        execute(LGfridges.LG187l(chatId));
-                        execute(LGfridges.LG187l_info(chatId));
+                        execute(fridges.LG187l(chatId));
+                        execute(fridges.LG187l_info(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
@@ -215,8 +216,8 @@ public class Bot extends TelegramLongPollingBot {
                     action.setChatId(chatId);
                     try {
                         execute(action);
-                        execute(LGfridges.LG254l(chatId));
-                        execute(LGfridges.LG254l_info(chatId));
+                        execute(fridges.LG254l(chatId));
+                        execute(fridges.LG254l_info(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
@@ -226,8 +227,8 @@ public class Bot extends TelegramLongPollingBot {
                     action.setChatId(chatId);
                     try {
                         execute(action);
-                        execute(LGfridges.LG306l(chatId));
-                        execute(LGfridges.LG306l_info(chatId));
+                        execute(fridges.LG306l(chatId));
+                        execute(fridges.LG306l_info(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
@@ -237,8 +238,8 @@ public class Bot extends TelegramLongPollingBot {
                     action.setChatId(chatId);
                     try {
                         execute(action);
-                        execute(LGfridges.LG341l(chatId));
-                        execute(LGfridges.LG341l_info(chatId));
+                        execute(fridges.LG341l(chatId));
+                        execute(fridges.LG341l_info(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
@@ -248,8 +249,8 @@ public class Bot extends TelegramLongPollingBot {
                     action.setChatId(chatId);
                     try {
                         execute(action);
-                        execute(LGfridges.LG395l(chatId));
-                        execute(LGfridges.LG395l_info(chatId));
+                        execute(fridges.LG395l(chatId));
+                        execute(fridges.LG395l_info(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
@@ -259,11 +260,13 @@ public class Bot extends TelegramLongPollingBot {
                     action.setChatId(chatId);
                     try {
                         execute(action);
-                        execute(LGfridges.LG617l(chatId));
-                        execute(LGfridges.LG617l_info(chatId));
+                        execute(fridges.LG617l(chatId));
+                        execute(fridges.LG617l_info(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
+                }case "Muzlatgich Samsung 290l"->{
+
                 }
             }
         }
