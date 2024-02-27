@@ -102,6 +102,157 @@ public class Fridges {
         return message;
     }
 
+    public SendMessage HaierFridge(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
+        message.setText("Katalogni tanlang");
+        ReplyKeyboardMarkup markup = new ReplyKeyboardMarkup();
+        List<KeyboardRow> rowList = new ArrayList<>();
+        KeyboardRow row = new KeyboardRow();
+        KeyboardButton basket = new KeyboardButton();
+        basket.setText("\uD83D\uDCCBSavat");
+        KeyboardButton back = new KeyboardButton();
+        back.setText("⬅️Back");
+        row.add(basket);
+        KeyboardRow row1 = new KeyboardRow();
+        KeyboardRow row2 = new KeyboardRow();
+        KeyboardRow row3 = new KeyboardRow();
+        KeyboardButton button1 = new KeyboardButton();
+        button1.setText("Muzlatgich Haier 364l");
+        KeyboardButton button2 = new KeyboardButton();
+        button2.setText("Muzlatgich Haier 346l");
+        KeyboardButton button3 = new KeyboardButton();
+        button3.setText("Muzlatgich Haier 400l");
+        row1.add(button1);
+        row1.add(button2);
+        row2.add(button3);
+        row2.add(back);
+        rowList.add(row1);
+        rowList.add(row2);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        markup.setResizeKeyboard(true);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMessage HansaFridge(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
+        message.setText("Katalogni tanlang");
+        ReplyKeyboardMarkup markup = new ReplyKeyboardMarkup();
+        List<KeyboardRow> rowList = new ArrayList<>();
+        KeyboardRow row = new KeyboardRow();
+        KeyboardButton basket = new KeyboardButton();
+        basket.setText("\uD83D\uDCCBSavat");
+        KeyboardButton back = new KeyboardButton();
+        back.setText("⬅️Back");
+        row.add(basket);
+        row.add(back);
+        KeyboardRow row1 = new KeyboardRow();
+        KeyboardRow row2 = new KeyboardRow();
+        KeyboardRow row3 = new KeyboardRow();
+        KeyboardButton button1 = new KeyboardButton();
+        button1.setText("Muzlatgich Hansa 242l");
+        KeyboardButton button2 = new KeyboardButton();
+        button2.setText("Muzlatgich Hansa 351l");
+        KeyboardButton button3 = new KeyboardButton();
+        button3.setText("Muzlatgich Hansa 256l");
+        KeyboardButton button4 = new KeyboardButton();
+        button4.setText("Muzlatgich Hansa 341l");
+        row1.add(button1);
+        row1.add(button2);
+        row2.add(button3);
+        row2.add(button4);
+        rowList.add(row1);
+        rowList.add(row2);
+        rowList.add(row3);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        markup.setResizeKeyboard(true);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMessage BekoFridge(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
+        message.setText("Katalogni tanlang");
+        ReplyKeyboardMarkup markup = new ReplyKeyboardMarkup();
+        List<KeyboardRow> rowList = new ArrayList<>();
+        KeyboardRow row = new KeyboardRow();
+        KeyboardButton basket = new KeyboardButton();
+        basket.setText("\uD83D\uDCCBSavat");
+        KeyboardButton back = new KeyboardButton();
+        back.setText("⬅️Back");
+        row.add(basket);
+        KeyboardRow row1 = new KeyboardRow();
+        KeyboardRow row2 = new KeyboardRow();
+        KeyboardRow row3 = new KeyboardRow();
+        KeyboardButton button1 = new KeyboardButton();
+        button1.setText("Muzlatgich Beko 223l");
+        KeyboardButton button2 = new KeyboardButton();
+        button2.setText("Muzlatgich Beko 280l");
+        KeyboardButton button3 = new KeyboardButton();
+        button3.setText("Muzlatgich Beko 215l");
+        row1.add(button1);
+        row1.add(button2);
+        row2.add(button3);
+        row2.add(back);
+        rowList.add(row1);
+        rowList.add(row2);
+        rowList.add(row3);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        markup.setResizeKeyboard(true);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMessage ArtelFridge(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
+        message.setText("Katalogni tanlang");
+        ReplyKeyboardMarkup markup = new ReplyKeyboardMarkup();
+        List<KeyboardRow> rowList = new ArrayList<>();
+        KeyboardRow row = new KeyboardRow();
+        KeyboardButton basket = new KeyboardButton();
+        basket.setText("\uD83D\uDCCBSavat");
+        KeyboardButton back = new KeyboardButton();
+        back.setText("⬅️Back");
+        row.add(basket);
+        row.add(back);
+        KeyboardRow row1 = new KeyboardRow();
+        KeyboardRow row2 = new KeyboardRow();
+        KeyboardRow row3 = new KeyboardRow();
+        KeyboardButton button1 = new KeyboardButton();
+        button1.setText("Muzlatgich Samsung 290l");
+        KeyboardButton button2 = new KeyboardButton();
+        button2.setText("Muzlatgich Samsung 310l");
+        KeyboardButton button3 = new KeyboardButton();
+        button3.setText("Muzlatgich Samsung 367l");
+        KeyboardButton button4 = new KeyboardButton();
+        button4.setText("Muzlatgich Samsung 388l");
+        KeyboardButton button5 = new KeyboardButton();
+        button5.setText("Muzlatgich Samsung 460l");
+        KeyboardButton button6 = new KeyboardButton();
+        button6.setText("Muzlatgich Samsung 640l");
+        row1.add(button1);
+        row1.add(button2);
+        row2.add(button3);
+        row2.add(button4);
+        row3.add(button5);
+        row3.add(button6);
+        rowList.add(row1);
+        rowList.add(row2);
+        rowList.add(row3);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        markup.setResizeKeyboard(true);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
     public SendMediaGroup LG187l(Long chatId) {
         InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/873/87377/192846/4e396093-5deb-42f3-9f9e-592ba97cd4d5.jpg");
         InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/873/87377/166840/f4b3759b-979b-4b4e-b986-c8d116246285.jpg");
@@ -553,6 +704,377 @@ public class Fridges {
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText("Savatga qoshish");
         button.setCallbackData("SM640l_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    //Haier=HR
+    public SendMediaGroup HR346l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3566/356603/194104/048c818e-ed0d-4486-8fd7-f18f1e6edc0a-small.webp");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3566/356603/194106/a4edece1-6130-4622-a9f6-c54008c697af.jpg");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3566/356603/194107/26732f87-3102-4574-8eba-b15091f31e4d.jpg");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage HR346l_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: Haier\n" +
+                "Muzlatish kamerasini eritish: Total No Frost\n" +
+                "Umumiy hajmi:  346 l\n" +
+                "Sovutgich kamerasi hajmi:  241 l\n" +
+                "Muzlatish kamerasi hajmi:  105 l\n" +
+                "Narxi: 8 601 000 so'm");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("HR346l_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMediaGroup HR364l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3565/356579/193894/aef641cb-406f-46df-92c7-e91e5279343e-small.webp");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3565/356579/193896/a674723b-2d2c-4a1f-9d34-5939d8f4690b.webp");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3565/356579/193899/0d33653d-6ecc-4525-89d4-15e2f55e8bed.webp");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage HR364_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: Haier\n" +
+                "Muzlatish kamerasini eritish: No Frost\n" +
+                "Umumiy hajmi: 364 l\n" +
+                "Sovutgich kamerasi hajmi: 254 l\n" +
+                "Muzlatish kamerasi hajmi: 108 l\n" +
+                "Narxi: 9 219 000 so'm");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("HR364l_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMediaGroup HRl(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3565/356578/193905/d843e8fe-d2de-47e5-a1d1-b37d3a8ec9c5-small.webp");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3565/356578/193907/04f4f5dd-df3e-4912-ada6-41ab56a5bfc3.webp");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3565/356578/193908/8b0fd83e-8f94-4eac-812c-f10e2229ed02.webp");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage HR400_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: Haier\n" +
+                "Muzlatish kamerasini eritish: No Frost\n" +
+                "Umumiy hajmi: 400 l\n" +
+                "Sovutgich kamerasi hajmi: 285 l\n" +
+                "Muzlatish kamerasi hajmi: 115 l\n" +
+                "Narxi:  9 991 000 so'm");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("HR400l_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    //HANSA=HS
+    public SendMediaGroup HS242l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3558/355805/190110/10256d17-7a47-4879-8afd-4751c8ee99a8.webp");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3558/355805/190111/510e62d1-2ba0-4b68-a05f-2b8be7c86948.webp");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage HS242_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: Haier\n" +
+                "Muzlatish kamerasini eritish: No Frost\n" +
+                "Umumiy hajmi: 242 l\n" +
+                "Sovutgich kamerasi hajmi: 182 l\n" +
+                "Muzlatish kamerasi hajmi: 60 l\n" +
+                "Narxi: 8 240 000 so'm ");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("HS242l_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMediaGroup HS351l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3557/355755/189093/ca88551f-f639-48d0-b1c5-4e05b913459a.webp");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3557/355755/189096/884576d0-1b0e-4036-8afb-1bb4394fdcb1.webp");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3557/355755/189094/f66bf70b-dce4-44aa-b456-74cac989ce7b.webp");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage HS351_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: Haier\n" +
+                "Muzlatish kamerasini eritish: Total No Frost\n" +
+                "Umumiy hajmi: 351 l\n" +
+                "Sovutgich kamerasi hajmi: 257 l\n" +
+                "Muzlatish kamerasi hajmi: 94 l\n" +
+                "Narxi: 8 755 000 so'm ");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("HS351l_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMediaGroup HS256l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3558/355806/190112/549a51dd-171a-48d5-b67e-4065e2d7fa5a.webp");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3558/355806/190108/dc2596ee-93b1-4f6c-a174-2f8e30fef0ce.webp");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3558/355806/190107/c32bf6ee-23a2-409f-a46c-ef6aaad83d7d.webp");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage HS256l_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: Haier\n" +
+                "Muzlatish kamerasini eritish: No Frost\n" +
+                "Umumiy hajmi: 256 l\n" +
+                "Sovutgich kamerasi hajmi: 177 l\n" +
+                "Muzlatish kamerasi hajmi: 64 l\n" +
+                "Narxi: 10 300 000 so'm\n ");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("HS256l_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMediaGroup HS341l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3557/355754/189083/9b4339d4-858f-4393-ba9f-a9b861276f5c-small.webp");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3557/355754/189084/d1c1df9b-e5a8-424b-9d8b-10ac9b50b403.webp");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3557/355754/189086/2f27c3d2-a3e2-4f69-a3aa-4ac191a4635f.webp");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage HS341_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: Haier\n" +
+                "Muzlatish kamerasini eritish: No Frost\n" +
+                "Umumiy hajmi: 341 l\n" +
+                "Sovutgich kamerasi hajmi: 223 l\n" +
+                "Muzlatish kamerasi hajmi: 94 l\n" +
+                "Narxi: 10 815 000 so'm ");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("HS341l_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+    //BEKO=BK
+    public SendMediaGroup BK223l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/1044/104425/181629/b871f27b-5844-40dc-800d-6f2027268f74.jpg");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/1044/104425/181630/8c3edb49-bb88-43a3-b586-506e5e2cd0d6-small.jpg");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/1044/104425/181631/973ae4dc-a204-4cbc-a11d-0a6478518d0d-small.jpg");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage BK223l_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: BEKO\n" +
+                "Muzlatish kamerasini eritish: No Frost\n" +
+                "Umumiy hajmi: 223 l\n" +
+                "Sovutgich kamerasi hajmi: 177 l\n" +
+                "Muzlatish kamerasi hajmi: 46 l\n" +
+                "Narxi: 4 120 000 so'm ");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("BK223_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }public SendMediaGroup BK280l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/808/80898/156063/efda05a2-1b0a-49ff-81ab-a7fb87b74525-small.jpg");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/808/80898/156064/105829c9-cd9e-497c-bed4-d1eebdf43d74.jpg");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/808/80898/156065/f385db6d-e73f-4ee4-a7d2-4f318f6ef795.jpg");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage BK280l_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: BEKO\n" +
+                "Muzlatish kamerasini eritish: Qo'lda boshqariladi\n" +
+                "Umumiy hajmi: 280 l\n" +
+                "Narxi: 4 635 000 so'm\n ");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("BK280l_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }public SendMediaGroup BK215l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/1027/102716/180546/97e4d959-0ab7-4e24-bafe-b7384377992c.jpg");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/1027/102716/180547/d9cbb556-3a00-436b-a266-93771156f9c1-small.jpg");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage BK215_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: BEKO\n" +
+                "Muzlatish kamerasini eritish: Qo'lda boshqariladi\n" +
+                "Umumiy hajmi: 215 l\n" +
+                "Sovutgich kamerasi hajmi: 213 l\n" +
+                "Narxi: 6 695 000 so'm ");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("BK215l_ID");
         row.add(button);
         rowList.add(row);
         markup.setKeyboard(rowList);

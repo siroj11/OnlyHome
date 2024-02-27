@@ -3,6 +3,7 @@ package org.example;
 import homeAppliances.Fridges;
 
 
+import lombok.SneakyThrows;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.xssf.usermodel.*;
@@ -13,6 +14,7 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,6 +28,7 @@ public class Bot extends TelegramLongPollingBot {
     SendChatAction action = new SendChatAction();
     private String state = "";
 
+    @SneakyThrows
     @Override
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
@@ -117,9 +120,10 @@ public class Bot extends TelegramLongPollingBot {
                 }
                 case "✍️ Izoh qoldirish" -> {
                     try {
-                        state="order";
+                        state = "order";
                         execute(service.izohQoldirishUz(chatId));
                     } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
                     }
                 }
                 case "ℹ️ Biz haqimizda" -> {
@@ -138,7 +142,7 @@ public class Bot extends TelegramLongPollingBot {
                 }
                 case "Qurilish mollari" -> {
                     try {
-                        state="catalogFirstPage";
+                        state = "catalogFirstPage";
                         execute(service.qurilishMollari(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
@@ -146,7 +150,7 @@ public class Bot extends TelegramLongPollingBot {
                 }
                 case "Qurilish jihozlari" -> {
                     try {
-                        state="catalogFirstPage";
+                        state = "catalogFirstPage";
                         execute(service.qurilishJihozlari(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
@@ -154,7 +158,7 @@ public class Bot extends TelegramLongPollingBot {
                 }
                 case "Uy jihozlari" -> {
                     try {
-                        state="catalogFirstPage";
+                        state = "catalogFirstPage";
                         execute(service.uyJihoz(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
@@ -162,7 +166,7 @@ public class Bot extends TelegramLongPollingBot {
                 }
                 case "Maishiy texnikalar" -> {
                     try {
-                        state="catalogFirstPage";
+                        state = "catalogFirstPage";
                         execute(service.maishiyTexnika(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
@@ -170,7 +174,7 @@ public class Bot extends TelegramLongPollingBot {
                 }
                 case "Oshxona jihozlari" -> {
                     try {
-                        state="catalogFirstPage";
+                        state = "catalogFirstPage";
                         execute(service.oshxonaJihoz(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
@@ -178,7 +182,7 @@ public class Bot extends TelegramLongPollingBot {
                 }
                 case "Suvinerlar" -> {
                     try {
-                        state="catalogFirstPage";
+                        state = "catalogFirstPage";
                         execute(service.suviner(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
@@ -186,7 +190,7 @@ public class Bot extends TelegramLongPollingBot {
                 }
                 case "Muzlatgich" -> {
                     try {
-                        state="maishiyTexnika";
+                        state = "maishiyTexnika";
                         execute(service.fridge(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
@@ -194,27 +198,44 @@ public class Bot extends TelegramLongPollingBot {
                 }
                 case "LG muzlatgichlar" -> {
                     try {
-                        state="fridge";
+                        state = "fridge";
                         execute(fridges.LGfridge(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
                 }
+                case "Muzlatgichlar Samsung" -> {
+                    state = "fridge";
+                    execute(fridges.SamsungFridge(chatId));
+                }
+                case "Haier muzlatgichlar"->{
+                    state="fridge";
+                    execute(fridges.HaierFridge(chatId));
+                }
+                case "HANSA muzlatgichlar"->{
+                    state="fridge";
+                    execute(fridges.HansaFridge(chatId));
+                }case "Beko muzlatgichlar"->{
+                    state="fridge";
+                    execute(fridges.BekoFridge(chatId));
+                }
+                case "Artel muzlatgichlar"->{
+                    state="fridge";
+                    execute(fridges.ArtelFridge(chatId));
+                }
                 case "Muzlatgich LG 187l" -> {
                     action.setAction(ActionType.UPLOADPHOTO);
                     action.setChatId(chatId);
-                    try {
-                        execute(action);
-                        execute(fridges.LG187l(chatId));
-                        execute(fridges.LG187l_info(chatId));
-                    } catch (TelegramApiException e) {
-                        throw new RuntimeException(e);
-                    }
+                    execute(action);
+                    execute(fridges.LG187l(chatId));
+                    execute(fridges.LG187l_info(chatId));
+
                 }
                 case "Muzlkatgich LG 254l" -> {
                     action.setAction(ActionType.UPLOADPHOTO);
                     action.setChatId(chatId);
                     try {
+
                         execute(action);
                         execute(fridges.LG254l(chatId));
                         execute(fridges.LG254l_info(chatId));
@@ -226,6 +247,7 @@ public class Bot extends TelegramLongPollingBot {
                     action.setAction(ActionType.UPLOADPHOTO);
                     action.setChatId(chatId);
                     try {
+
                         execute(action);
                         execute(fridges.LG306l(chatId));
                         execute(fridges.LG306l_info(chatId));
@@ -237,6 +259,7 @@ public class Bot extends TelegramLongPollingBot {
                     action.setAction(ActionType.UPLOADPHOTO);
                     action.setChatId(chatId);
                     try {
+
                         execute(action);
                         execute(fridges.LG341l(chatId));
                         execute(fridges.LG341l_info(chatId));
@@ -248,6 +271,7 @@ public class Bot extends TelegramLongPollingBot {
                     action.setAction(ActionType.UPLOADPHOTO);
                     action.setChatId(chatId);
                     try {
+
                         execute(action);
                         execute(fridges.LG395l(chatId));
                         execute(fridges.LG395l_info(chatId));
@@ -259,14 +283,84 @@ public class Bot extends TelegramLongPollingBot {
                     action.setAction(ActionType.UPLOADPHOTO);
                     action.setChatId(chatId);
                     try {
+
                         execute(action);
                         execute(fridges.LG617l(chatId));
                         execute(fridges.LG617l_info(chatId));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
-                }case "Muzlatgich Samsung 290l"->{
+                }
+                case "Muzlatgich Samsung 290l" -> {
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    try {
 
+                        execute(action);
+                        execute(fridges.SM290l(chatId));
+                        execute(fridges.SM290l_info(chatId));
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                case "Muzlatgich Samsung 310l" -> {
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    try {
+
+                        execute(action);
+                        execute(fridges.SM310l(chatId));
+                        execute(fridges.SM310l_info(chatId));
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                case "Muzlatgich Samsung 367l" -> {
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    try {
+
+                        execute(action);
+                        execute(fridges.SM367l(chatId));
+                        execute(fridges.SM367l_info(chatId));
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                case "Muzlatgich Samsung 388l" -> {
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    try {
+
+                        execute(action);
+                        execute(fridges.SM388l(chatId));
+                        execute(fridges.SM388l_info(chatId));
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                case "Muzlatgich Samsung 460l" -> {
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    try {
+                        execute(action);
+                        execute(fridges.SM460l(chatId));
+                        execute(fridges.SM460l_info(chatId));
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                case "Muzlatgich Samsung 640l" -> {
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    try {
+
+                        execute(action);
+                        execute(fridges.SM640l(chatId));
+                        execute(fridges.SM640l_info(chatId));
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
         }
@@ -308,10 +402,10 @@ public class Bot extends TelegramLongPollingBot {
                 }*/
                 case "uzb" -> {
                     try {
-                        if (firstStart){
+                        if (firstStart) {
                             execute(service.contactRequest(chatid));
-                            firstStart=false;
-                        }else if (firstStart){
+                            firstStart = false;
+                        } else if (firstStart) {
                             execute(service.menu(chatid));
                         }
                     } catch (TelegramApiException e) {
@@ -371,7 +465,8 @@ public class Bot extends TelegramLongPollingBot {
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
-                }case "editLanguageID"->{
+                }
+                case "editLanguageID" -> {
                     try {
                         execute(service.choiceLanguage(chatid));
                     } catch (TelegramApiException e) {
