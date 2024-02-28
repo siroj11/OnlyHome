@@ -2,6 +2,8 @@ package homeAppliances;
 
 import org.telegram.telegrambots.meta.api.methods.send.SendMediaGroup;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
+import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.api.objects.media.InputMedia;
 import org.telegram.telegrambots.meta.api.objects.media.InputMediaPhoto;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
@@ -33,7 +35,7 @@ public class Fridges {
         KeyboardButton button1 = new KeyboardButton();
         button1.setText("Muzlatgich LG 187l");
         KeyboardButton button2 = new KeyboardButton();
-        button2.setText("Muzlkatgich LG 254l");
+        button2.setText("Muzlatgich LG 254l");
         KeyboardButton button3 = new KeyboardButton();
         button3.setText("Muzlatgich LG 306l");
         KeyboardButton button4 = new KeyboardButton();
@@ -226,17 +228,17 @@ public class Fridges {
         KeyboardRow row2 = new KeyboardRow();
         KeyboardRow row3 = new KeyboardRow();
         KeyboardButton button1 = new KeyboardButton();
-        button1.setText("Muzlatgich Samsung 290l");
+        button1.setText("Muzlatgich Artel 175l");
         KeyboardButton button2 = new KeyboardButton();
-        button2.setText("Muzlatgich Samsung 310l");
+        button2.setText("Muzlatgich Artel 225l");
         KeyboardButton button3 = new KeyboardButton();
-        button3.setText("Muzlatgich Samsung 367l");
+        button3.setText("Muzlatgich Artel 212l");
         KeyboardButton button4 = new KeyboardButton();
-        button4.setText("Muzlatgich Samsung 388l");
+        button4.setText("Muzlatgich Artel 265l");
         KeyboardButton button5 = new KeyboardButton();
-        button5.setText("Muzlatgich Samsung 460l");
+        button5.setText("Muzlatgich Artel 350l");
         KeyboardButton button6 = new KeyboardButton();
-        button6.setText("Muzlatgich Samsung 640l");
+        button6.setText("Muzlatgich Artel 380l");
         row1.add(button1);
         row1.add(button2);
         row2.add(button3);
@@ -788,7 +790,7 @@ public class Fridges {
         return message;
     }
 
-    public SendMediaGroup HRl(Long chatId) {
+    public SendMediaGroup HR400l(Long chatId) {
         InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3565/356578/193905/d843e8fe-d2de-47e5-a1d1-b37d3a8ec9c5-small.webp");
         InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3565/356578/193907/04f4f5dd-df3e-4912-ada6-41ab56a5bfc3.webp");
         InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/3565/356578/193908/8b0fd83e-8f94-4eac-812c-f10e2229ed02.webp");
@@ -976,6 +978,7 @@ public class Fridges {
         message.setReplyMarkup(markup);
         return message;
     }
+
     //BEKO=BK
     public SendMediaGroup BK223l(Long chatId) {
         InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/1044/104425/181629/b871f27b-5844-40dc-800d-6f2027268f74.jpg");
@@ -1013,7 +1016,9 @@ public class Fridges {
         markup.setKeyboard(rowList);
         message.setReplyMarkup(markup);
         return message;
-    }public SendMediaGroup BK280l(Long chatId) {
+    }
+
+    public SendMediaGroup BK280l(Long chatId) {
         InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/808/80898/156063/efda05a2-1b0a-49ff-81ab-a7fb87b74525-small.jpg");
         InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/808/80898/156064/105829c9-cd9e-497c-bed4-d1eebdf43d74.jpg");
         InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/808/80898/156065/f385db6d-e73f-4ee4-a7d2-4f318f6ef795.jpg");
@@ -1047,7 +1052,9 @@ public class Fridges {
         markup.setKeyboard(rowList);
         message.setReplyMarkup(markup);
         return message;
-    }public SendMediaGroup BK215l(Long chatId) {
+    }
+
+    public SendMediaGroup BK215l(Long chatId) {
         InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/1027/102716/180546/97e4d959-0ab7-4e24-bafe-b7384377992c.jpg");
         InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/1027/102716/180547/d9cbb556-3a00-436b-a266-93771156f9c1-small.jpg");
         List<InputMedia> list = new ArrayList<>();
@@ -1080,5 +1087,219 @@ public class Fridges {
         markup.setKeyboard(rowList);
         message.setReplyMarkup(markup);
         return message;
+    }
+
+    //Artel=AR
+    public SendMediaGroup AR175l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/858/85803/166040/7a4f0777-b22e-4a85-9784-54577791a5d8-small.jpg");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/858/85803/166039/584d0e70-90a1-4632-997b-ff80af2925a4-small.jpg");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/858/85803/166041/589a4069-a305-485c-8c67-e0420d133710-small.jpg");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage AR175_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: Artel\n" +
+                "Muzlatish kamerasini eritish: Qo'lda boshqariladi\n" +
+                "Umumiy hajmi: 175 l\n" +
+                "Sovutgich kamerasi hajmi: 153 l\n" +
+                "Muzlatish kamerasi hajmi: 22 l \n" +
+                "Narxi: 3 502 000 so'm ");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("AR175_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMediaGroup AR225l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/808/80844/155920/47c83883-5f20-44bf-8343-f9508c5c19ad-small.jpg");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/808/80844/155921/9b14e65d-f281-456d-b3cd-bb07cb67329d-small.jpg");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage AR225_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: Artel\n" +
+                "Muzlatish kamerasini eritish: Qo'lda boshqariladi\n" +
+                "Umumiy hajmi: 225 l\n" +
+                "Sovutgich kamerasi hajmi: 200 l\n" +
+                "Muzlatish kamerasi hajmi: 25 l \n" +
+                "Narxi: 3 605 000 so'm ");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("AR225_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMediaGroup AR212l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/808/80817/155834/9028c9c4-01ba-4e18-812e-b1fe7b1b0581-small.jpg");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/808/80817/155835/2ff67749-9995-4b07-a495-478f4bf4e499-small.jpg");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/808/80817/155836/5f6b4e91-d5a4-49d8-b602-c1ab9019cd21-small.jpg");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage AR212_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: Artel\n" +
+                "Muzlatish kamerasini eritish: Qo'lda boshqariladi\n" +
+                "Umumiy hajmi: 212 l\n" +
+                "Sovutgich kamerasi hajmi: 166 l\n" +
+                "Muzlatish kamerasi hajmi: 46 l \n" +
+                "Narxi: 4 509 000 so'm ");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("AR212_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMediaGroup AR265l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/1054/105431/184122/e3923110-74f9-40c1-b051-044ad1bb8d77-small.jpg");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/1054/105431/184123/ddc34800-f6ff-49a6-967e-11cd1475ed30-small.jpg");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/1054/105431/184124/643ab8c2-0e9f-4ef7-afa6-f0887c8f33b8-small.jpg");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage AR265_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: Artel\n" +
+                "Muzlatish kamerasini eritish: Qo'lda boshqariladi\n" +
+                "Umumiy hajmi: 265 l\n" +
+                "Sovutgich kamerasi hajmi: 248 l\n" +
+                "Muzlatish kamerasi hajmi: 70 l \n" +
+                "Narxi: 5 253 000 so'm ");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("AR265_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+    public SendMediaGroup AR350l(Long chatId) {
+        InputMedia inputMedia = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/965/96515/175161/077fc677-4a26-4d8e-b2d0-995b128b451f-small.jpg");
+        InputMedia inputMedia1 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/965/96515/175162/bf9995dd-f502-4efe-94bc-78c33bae69e0-small.jpg");
+        InputMedia inputMedia2 = new InputMediaPhoto("https://mini-io-api.texnomart.uz/catalog/product/965/96515/175163/d6329b3c-a527-4eae-800a-4d5cb341b352-small.jpg");
+        List<InputMedia> list = new ArrayList<>();
+        list.add(inputMedia);
+        list.add(inputMedia1);
+        list.add(inputMedia2);
+        SendMediaGroup sendMediaGroup = new SendMediaGroup();
+        sendMediaGroup.setMedias(list);
+        sendMediaGroup.setChatId(chatId);
+        return sendMediaGroup;
+    }
+
+    public SendMessage AR350_info(Long chatId) {
+        SendMessage message = new SendMessage();
+        message.setText("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: Artel\n" +
+                "Muzlatish kamerasini eritish: No Frost\n" +
+                "Umumiy hajmi: 350 l\n" +
+                "Sovutgich kamerasi hajmi: 252 l\n" +
+                "Muzlatish kamerasi hajmi: 98 l \n" +
+                "Narxi: 8 137 000 so'm ");
+        message.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("AR350_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        return message;
+    }
+
+
+    public SendPhoto AR380l(Long chatId) {
+        SendPhoto photo = new SendPhoto();
+        photo.setPhoto(new InputFile("https://mini-io-api.texnomart.uz/catalog/product/869/86991/166447/202a27f9-4351-44ee-b0b7-04a8c9ea2d1a-small.jpg"));
+        photo.setCaption("\n" +
+                "Mahsulot haqida qisqacha malumot\n" +
+                "Brend: Artel\n" +
+                "Muzlatish kamerasini eritish: Qo'lda boshqariladi\n" +
+                "Umumiy hajmi: 380 l\n" +
+                "Narxi: 7 725 000 so'm ");
+        photo.setChatId(chatId);
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        button.setText("Savatga qoshish");
+        button.setCallbackData("AR380_ID");
+        row.add(button);
+        rowList.add(row);
+        markup.setKeyboard(rowList);
+        photo.setReplyMarkup(markup);
+        return photo;
+
     }
 }

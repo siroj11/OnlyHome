@@ -231,7 +231,7 @@ public class Bot extends TelegramLongPollingBot {
                     execute(fridges.LG187l_info(chatId));
 
                 }
-                case "Muzlkatgich LG 254l" -> {
+                case "Muzlatgich LG 254l" -> {
                     action.setAction(ActionType.UPLOADPHOTO);
                     action.setChatId(chatId);
                     try {
@@ -361,6 +361,101 @@ public class Bot extends TelegramLongPollingBot {
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
+                }case "Muzlatgich Haier 364l"->{
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    execute(action);
+                    execute(fridges.HR364l(chatId));
+                    execute(fridges.HR364_info(chatId));
+                }case "Muzlatgich Haier 346l"->{
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    execute(action);
+                    execute(fridges.HR346l(chatId));
+                    execute(fridges.HR346l_info(chatId));
+                }case "Muzlatgich Haier 400l"->{
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    execute(action);
+                    execute(fridges.HR400l(chatId));
+                    execute(fridges.HR400_info(chatId));
+                }case "Muzlatgich Hansa 242l"->{
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    execute(action);
+                    execute(fridges.HS242l(chatId));
+                    execute(fridges.HS242_info(chatId));
+                }case "Muzlatgich Hansa 351l"->{
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    execute(action);
+                    execute(fridges.HS351l(chatId));
+                    execute(fridges.HS351_info(chatId));
+                }case "Muzlatgich Hansa 256l"->{
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    execute(action);
+                    execute(fridges.HS256l(chatId));
+                    execute(fridges.HS256l_info(chatId));
+                }case "Muzlatgich Hansa 341l"->{
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    execute(action);
+                    execute(fridges.HS341l(chatId));
+                    execute(fridges.HS341_info(chatId));
+                }case "Muzlatgich Beko 223l"->{
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    execute(action);
+                    execute(fridges.BK223l(chatId));
+                    execute(fridges.BK223l_info(chatId));
+                }case "Muzlatgich Beko 280l"->{
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    execute(action);
+                    execute(fridges.BK280l(chatId));
+                    execute(fridges.BK280l_info(chatId));
+                }case "Muzlatgich Beko 215l"->{
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    execute(action);
+                    execute(fridges.BK215l(chatId));
+                    execute(fridges.BK215_info(chatId));
+                }case "Muzlatgich Artel 175l"->{
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    execute(action);
+                    execute(fridges.AR175l(chatId));
+                    execute(fridges.AR175_info(chatId));
+                }case "Muzlatgich Artel 225l"->{
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    execute(action);
+                    execute(fridges.AR225l(chatId));
+                    execute(fridges.AR225_info(chatId));
+                }case "Muzlatgich Artel 212l"->{
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    execute(action);
+                    execute(fridges.AR212l(chatId));
+                    execute(fridges.AR212_info(chatId));
+                }case "Muzlatgich Artel 265l"->{
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    execute(action);
+                    execute(fridges.AR265l(chatId));
+                    execute(fridges.AR265_info(chatId));
+                }case "Muzlatgich Artel 350l"->{
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    execute(action);
+                    execute(fridges.AR350l(chatId));
+                    execute(fridges.AR350_info(chatId));
+                }case "Muzlatgich Artel 380l"->{
+                    action.setAction(ActionType.UPLOADPHOTO);
+                    action.setChatId(chatId);
+                    execute(action);
+                    execute(fridges.AR380l(chatId));
                 }
             }
         }
