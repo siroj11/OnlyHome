@@ -18,7 +18,6 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Bot extends TelegramLongPollingBot {
@@ -636,9 +635,6 @@ public class Bot extends TelegramLongPollingBot {
 
 
     }
-
-    HashMap<Integer, Integer> checkMap = new HashMap<>(5);
-    HashMap<Integer, Object[]> stringMap = new HashMap<>();
 
     long cost = 0;
     private List<String> product = new ArrayList<>();

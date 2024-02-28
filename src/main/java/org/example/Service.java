@@ -511,66 +511,7 @@ public class Service {
         return photo;
     }
 
-    /*public SendMessage branches(Long chatId) {
-        SendMessage message = new SendMessage();
-        message.setChatId(chatId);
-        message.setText("Our branches: ");
-        ReplyKeyboardMarkup markup = new ReplyKeyboardMarkup();
-        List<KeyboardRow> rowList = new ArrayList<>();
-        KeyboardRow row1 = new KeyboardRow();
-        KeyboardRow row2 = new KeyboardRow();
-        KeyboardRow row3 = new KeyboardRow();
-        KeyboardRow row4 = new KeyboardRow();
-        KeyboardRow row5 = new KeyboardRow();
-        KeyboardRow row6 = new KeyboardRow();
-        KeyboardButton button1 = new KeyboardButton();
-        button1.setText("⬅️Back");
-        KeyboardButton button2 = new KeyboardButton();
-        button2.setText("▶️ Next");
-        KeyboardButton button3 = new KeyboardButton();
-        button3.setText("DRUJBA");
-        KeyboardButton button4 = new KeyboardButton();
-        button4.setText("MEGA PLANET");
-        KeyboardButton button5 = new KeyboardButton();
-        button5.setText("AVIASOZLAR");
-        KeyboardButton button6 = new KeyboardButton();
-        button6.setText("RISOVIY");
-        KeyboardButton button7 = new KeyboardButton();
-        button7.setText("PARUS");
-        KeyboardButton button8 = new KeyboardButton();
-        button8.setText("MAGIC CITY");
-        KeyboardButton button9 = new KeyboardButton();
-        button9.setText("SAMARQAND DARVOZA");
-        KeyboardButton button10 = new KeyboardButton();
-        button10.setText("UNIVERSAM");
-        KeyboardButton button11 = new KeyboardButton();
-        button11.setText("ROYSON");
-        KeyboardButton button12 = new KeyboardButton();
-        button12.setText("NEXT");
 
-        row1.add(button1);
-        row1.add(button2);
-        row2.add(button3);
-        row2.add(button4);
-        row3.add(button5);
-        row3.add(button6);
-        row4.add(button7);
-        row4.add(button8);
-        row5.add(button9);
-        row5.add(button10);
-        row6.add(button11);
-        row6.add(button12);
-        rowList.add(row1);
-        rowList.add(row2);
-        rowList.add(row3);
-        rowList.add(row4);
-        rowList.add(row5);
-        rowList.add(row6);
-        markup.setResizeKeyboard(true);
-        markup.setKeyboard(rowList);
-        message.setReplyMarkup(markup);
-        return message;
-    }*/
 
     public SendMessage settings(Long chatId) {
         SendMessage message = new SendMessage();

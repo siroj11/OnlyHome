@@ -14,7 +14,7 @@ public enum ActionType {
 
     private final String text;
 
-    private ActionType(String text) {
+    ActionType(String text) {
         this.text = text;
     }
 }
