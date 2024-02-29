@@ -496,8 +496,8 @@ public class Service {
     public SendPhoto aboutUs(Long chatId) {
         SendPhoto photo = new SendPhoto();
         photo.setChatId(chatId);
-        photo.setCaption("☎️ Call center +998712005400");
-        photo.setPhoto(new InputFile(new File("D:\\bot\\aboutUs.jpg")));
+        photo.setCaption("☎️ Call center +998 93 561 71 11");
+        photo.setPhoto(new InputFile(new File("D:\\bot\\Only Home.jpg")));
         ReplyKeyboardMarkup markup = new ReplyKeyboardMarkup();
         List<KeyboardRow> rowList = new ArrayList<>();
         KeyboardButton button = new KeyboardButton();
