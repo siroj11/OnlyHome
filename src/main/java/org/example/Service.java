@@ -410,6 +410,7 @@ public class Service {
 
         return message;
     }
+
     public SendMessage izohQoldirishUz(Long chatId) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setText("Izoh qoldiring. Sizning fikringiz biz uchun muhim");
@@ -506,7 +507,6 @@ public class Service {
         photo.setReplyMarkup(markup);
         return photo;
     }
-
 
 
     public SendMessage settings(Long chatId) {
