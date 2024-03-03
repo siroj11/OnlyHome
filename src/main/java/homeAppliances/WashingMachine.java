@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WashingMachine {
-    public SendMessage LGfridge(Long chatId) {
+    public SendMessage LG_WashMach(Long chatId) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
         message.setText("Katalogni tanlang");
@@ -53,7 +53,7 @@ public class WashingMachine {
         return message;
     }
 
-    public SendMessage SamsungFridge(Long chatId) {
+    public SendMessage Samsung_WashMach(Long chatId) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
         message.setText("Katalogni tanlang");
@@ -97,7 +97,7 @@ public class WashingMachine {
         return message;
     }
 
-    public SendMessage HaierFridge(Long chatId) {
+    public SendMessage Haier_WashMach(Long chatId) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
         message.setText("Katalogni tanlang");
@@ -131,7 +131,7 @@ public class WashingMachine {
         return message;
     }
 
-    public SendMessage HansaFridge(Long chatId) {
+    public SendMessage Hansa_WashMach(Long chatId) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
         message.setText("Katalogni tanlang");
@@ -169,7 +169,7 @@ public class WashingMachine {
         return message;
     }
 
-    public SendMessage BekoFridge(Long chatId) {
+    public SendMessage Beko_WashMach(Long chatId) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
         message.setText("Katalogni tanlang");
@@ -203,5 +203,4 @@ public class WashingMachine {
         message.setReplyMarkup(markup);
         return message;
     }
-
 }
