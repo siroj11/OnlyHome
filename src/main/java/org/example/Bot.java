@@ -1,8 +1,6 @@
 package org.example;
 
 import homeAppliances.Fridges;
-
-
 import lombok.SneakyThrows;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
@@ -12,16 +10,24 @@ import org.telegram.telegrambots.meta.api.methods.ActionType;
 import org.telegram.telegrambots.meta.api.methods.send.SendChatAction;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
+import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Bot extends TelegramLongPollingBot {
     Service service = new Service();
+    String product = null;
+    private Map<Integer, String> userSelectedProducts = new HashMap<>();
+    private Map<Long, ShoppingCart> userShoppingCarts = new HashMap<>();
     static List<Users> userList = new ArrayList<>();
     homeAppliances.Fridges fridges = new Fridges();
     SendChatAction action = new SendChatAction();
@@ -31,6 +37,8 @@ public class Bot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
+            Message chatMessage = update.getMessage();
+            Long userId = chatMessage.getFrom().getId();
             Long chatId = update.getMessage().getChatId();
             String text = update.getMessage().getText();
             switch (text) {
@@ -57,11 +65,7 @@ public class Bot extends TelegramLongPollingBot {
                             throw new RuntimeException(e);
                         }
                     } else {
-                        try {
-                            execute(service.basket(chatId, cost, product));
-                        } catch (TelegramApiException e) {
-                            throw new RuntimeException(e);
-                        }
+                        sendCartContents(userId);
                     }
                 }
                 case "⬅️Back" -> {
@@ -524,76 +528,95 @@ public class Bot extends TelegramLongPollingBot {
                     }
                 }
                 case "LG187l_ID" -> {
-                    product.add("Muzlatgich LG187l");
+                    product = ("Muzlatgich LG187l");
                     cost += 6500000;
-                    try {
-                        execute(messageOrder(chatid));
-                    } catch (TelegramApiException e) {
-                        throw new RuntimeException(e);
-                    }
+                    addToCart(chatid, product, cost);
                 }
                 case "LG254l_ID" -> {
-                    product.add("Muzlatgich LG254l");
+                    product = ("Muzlatgich LG254l");
                     cost += 7400000;
-                    try {
-                        execute(messageOrder(chatid));
-                    } catch (TelegramApiException e) {
-                        throw new RuntimeException(e);
-                    }
+                    addToCart(chatid, product, cost);
                 }
                 case "LG306l_ID" -> {
-                    product.add("Muzlatgich LG306l");
+                    product = ("Muzlatgich LG306l");
                     cost += 8000000;
-                    try {
-                        execute(messageOrder(chatid));
-                    } catch (TelegramApiException e) {
-                        throw new RuntimeException(e);
-                    }
+                    addToCart(chatid, product, cost);
                 }
                 case "LG341l_ID" -> {
-                    product.add("Muzlatgich LG341l");
+                    product = ("Muzlatgich LG341l");
                     cost += 9000000;
-                    try {
-                        execute(messageOrder(chatid));
-                    } catch (TelegramApiException e) {
-                        throw new RuntimeException(e);
-                    }
+                    addToCart(chatid, product, cost);
                 }
                 case "LG35l_ID" -> {
-                    product.add("Muzlatgich LG35l");
+                    product = ("Muzlatgich LG35l");
                     cost += 10000000;
-                    try {
-                        execute(messageOrder(chatid));
-                    } catch (TelegramApiException e) {
-                        throw new RuntimeException(e);
-                    }
+                    addToCart(chatid, product, cost);
                 }
                 case "LG617l_ID" -> {
-                    product.add("Muzlatgich LG617l");
+                    product = ("Muzlatgich LG617l");
                     cost += 20000000;
-                    try {
-                        execute(messageOrder(chatid));
-                    } catch (TelegramApiException e) {
-                        throw new RuntimeException(e);
-                    }
+                    addToCart(chatid, product, cost);
                 }
-                case "editLanguageID" -> {
-                    try {
-                        execute(service.choiceLanguage(chatid));
-                    } catch (TelegramApiException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
+                case "editLanguageID" -> execute(service.choiceLanguage(chatid));
             }
         }
 
     }
 
-    public SendMessage messageOrder(Long chatId) {
+
+    private void sendCartContents(Long userId) {
+        ShoppingCart cart = userShoppingCarts.getOrDefault(userId, new ShoppingCart());
+        Map<String, Double> contents = cart.getContents();
+
+        StringBuilder sb = new StringBuilder("Sizning buyurtmalaringiz:\n");
+        for (Map.Entry<String, Double> entry : contents.entrySet()) {
+            sb.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
+        }
+
         SendMessage message = new SendMessage();
-        message.setText("Tovaringiz savatga qoshildi");
-        message.setChatId(chatId);
-        return message;
+        message.setChatId(userId.toString());
+        message.setText(sb.toString());
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row1 = new ArrayList<>();
+        List<InlineKeyboardButton> row2 = new ArrayList<>();
+        List<InlineKeyboardButton> row3 = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button1 = new InlineKeyboardButton();
+        button1.setText("Buyurtmani tasdiqlash");
+        button1.setCallbackData("acceptCart");
+        InlineKeyboardButton button2 = new InlineKeyboardButton();
+        button2.setText("Buyurtmani davom etirish");
+        button2.setCallbackData("continue");
+        InlineKeyboardButton button3 = new InlineKeyboardButton();
+        button3.setText("\uD83D\uDD04Tozalash");
+        button3.setCallbackData("clean");
+        row1.add(button1);
+        row2.add(button2);
+        row3.add(button3);
+        rowList.add(row1);
+        rowList.add(row2);
+        rowList.add(row3);
+        try {
+            execute(message);
+        } catch (TelegramApiException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void addToCart(Long userId, String productName, double price) {
+        ShoppingCart cart = userShoppingCarts.getOrDefault(userId, new ShoppingCart());
+        cart.addProduct(productName, price);
+        userShoppingCarts.put(userId, cart);
+
+        SendMessage successMessage = new SendMessage();
+        successMessage.setChatId(userId.toString());
+        successMessage.setText("Tovar: '" + productName + " savatga qoshildi");
+
+        try {
+            execute(successMessage);
+        } catch (TelegramApiException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void startMessages(String chatid) throws TelegramApiException, IOException {
@@ -653,7 +676,6 @@ public class Bot extends TelegramLongPollingBot {
     }
 
     long cost = 0;
-    private List<String> product = new ArrayList<>();
     private boolean firstStart = true;
 
     @Override
