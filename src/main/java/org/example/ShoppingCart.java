@@ -7,8 +7,8 @@ import java.util.Map;
 
 @Getter
 public class ShoppingCart {
-    private Map<String ,Double>contents=new HashMap<>();
-    public void addProduct(String productName,double productPrice){
+    private Map<String ,Long>contents=new HashMap<>();
+    public void addProduct(String productName,Long productPrice){
         contents.put(productName,productPrice);
     }
 }

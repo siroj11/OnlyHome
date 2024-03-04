@@ -557,6 +557,11 @@ public class Bot extends TelegramLongPollingBot {
                     cost += 20000000;
                     addToCart(chatid, product, cost);
                 }
+                case "acceptCart" -> {
+                    CallbackQuery Query = update.getCallbackQuery();
+                    String text = Query.getMessage().getText();
+                    buy( chatid);
+                }
                 case "editLanguageID" -> execute(service.choiceLanguage(chatid));
             }
         }
@@ -566,11 +571,11 @@ public class Bot extends TelegramLongPollingBot {
 
     private void sendCartContents(Long userId) {
         ShoppingCart cart = userShoppingCarts.getOrDefault(userId, new ShoppingCart());
-        Map<String, Double> contents = cart.getContents();
+        Map<String, Long> contents = cart.getContents();
 
         StringBuilder sb = new StringBuilder("Sizning buyurtmalaringiz:\n");
-        for (Map.Entry<String, Double> entry : contents.entrySet()) {
-            sb.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
+        for (Map.Entry<String, Long> entry : contents.entrySet()) {
+            sb.append(entry.getKey()).append(" : ").append(entry.getValue()).append("\n");
         }
 
         SendMessage message = new SendMessage();
@@ -596,6 +601,8 @@ public class Bot extends TelegramLongPollingBot {
         rowList.add(row1);
         rowList.add(row2);
         rowList.add(row3);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
         try {
             execute(message);
         } catch (TelegramApiException e) {
@@ -603,20 +610,52 @@ public class Bot extends TelegramLongPollingBot {
         }
     }
 
-    private void addToCart(Long userId, String productName, double price) {
+    private void addToCart(Long userId, String productName, long price) {
         ShoppingCart cart = userShoppingCarts.getOrDefault(userId, new ShoppingCart());
         cart.addProduct(productName, price);
         userShoppingCarts.put(userId, cart);
-
         SendMessage successMessage = new SendMessage();
         successMessage.setChatId(userId.toString());
         successMessage.setText("Tovar: '" + productName + " savatga qoshildi");
-
         try {
             execute(successMessage);
         } catch (TelegramApiException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void buy(Long chatId) throws TelegramApiException {
+        ShoppingCart cart = userShoppingCarts.getOrDefault(chatId, new ShoppingCart());
+        Map<String, Long> contents = cart.getContents();
+
+        StringBuilder sb = new StringBuilder("Sizning buyurtmalaringiz:\n");
+        for (Map.Entry<String, Long> entry : contents.entrySet()) {
+            sb.append(entry.getKey()).append(" : ").append(entry.getValue()).append("\n");
+        }
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
+        message.setText(sb.toString());
+        InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+        List<InlineKeyboardButton> row1 = new ArrayList<>();
+        List<InlineKeyboardButton> row2 = new ArrayList<>();
+        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        InlineKeyboardButton button1 = new InlineKeyboardButton();
+        button1.setCallbackData("cashId");
+        button1.setText("Naqd pul");
+        InlineKeyboardButton button2 = new InlineKeyboardButton();
+        button2.setText("Click");
+        button2.setCallbackData("clickId");
+        InlineKeyboardButton button3 = new InlineKeyboardButton();
+        button3.setText("Payme");
+        button3.setCallbackData("paymeId");
+        row1.add(button1);
+        row1.add(button2);
+        row2.add(button3);
+        rowList.add(row1);
+        rowList.add(row2);
+        markup.setKeyboard(rowList);
+        message.setReplyMarkup(markup);
+        execute(message);
     }
 
     private void startMessages(String chatid) throws TelegramApiException, IOException {

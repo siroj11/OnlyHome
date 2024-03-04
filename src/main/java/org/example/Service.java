@@ -508,7 +508,6 @@ public class Service {
         return photo;
     }
 
-
     public SendMessage settings(Long chatId) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
