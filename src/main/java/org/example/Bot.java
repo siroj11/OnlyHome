@@ -560,7 +560,7 @@ public class Bot extends TelegramLongPollingBot {
                 case "acceptCart" -> {
                     CallbackQuery Query = update.getCallbackQuery();
                     String text = Query.getMessage().getText();
-                    buy( chatid);
+                    buy(chatid);
                 }
                 case "editLanguageID" -> execute(service.choiceLanguage(chatid));
             }
@@ -631,6 +631,7 @@ public class Bot extends TelegramLongPollingBot {
         StringBuilder sb = new StringBuilder("Sizning buyurtmalaringiz:\n");
         for (Map.Entry<String, Long> entry : contents.entrySet()) {
             sb.append(entry.getKey()).append(" : ").append(entry.getValue()).append("\n");
+
         }
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
@@ -716,6 +717,10 @@ public class Bot extends TelegramLongPollingBot {
 
     long cost = 0;
     private boolean firstStart = true;
+
+    public void click(long chatId) {
+
+    }
 
     @Override
     public String getBotToken() {
